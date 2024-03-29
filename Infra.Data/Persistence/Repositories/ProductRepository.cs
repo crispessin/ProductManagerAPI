@@ -1,9 +1,9 @@
 ﻿using Domain.Entites;
 using Domain.Repositories;
-using Infra.Data.Context;
+using Infra.Data.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra.Data.Repositories
+namespace Infra.Data.Persistence.Repositories
 {
     public class ProductRepository(ApplicationDbContext db) : IProductRepository
     {
@@ -30,17 +30,17 @@ namespace Infra.Data.Repositories
 
         public async Task<Product?> GetByIdAsync(int id)
         {
-            return await _db.Product.FirstOrDefaultAsync(x => x.ProductId == id);
+            return await _db.Products.FirstOrDefaultAsync(x => x.ProductId == id);
         }
 
         public async Task<Product?> SearchByNameAsync(string name)
         {
-            return await _db.Product.FirstOrDefaultAsync(x => x.Name == name);
+            return await _db.Products.FirstOrDefaultAsync(x => x.Name == name);
         }
 
         public async Task<ICollection<Product>> GetProductsAsync()
         {
-            return await _db.Product.ToListAsync();
+            return await _db.Products.ToListAsync();
         }
 
         public async Task<List<Product>> GetProductsSortedByAsync(string orderBy)

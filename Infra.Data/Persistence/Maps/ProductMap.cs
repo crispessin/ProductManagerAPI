@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infra.Data.Maps
+namespace Infra.Data.Persistence.Maps
 {
     public class ProductMap : IEntityTypeConfiguration<Product>
     {

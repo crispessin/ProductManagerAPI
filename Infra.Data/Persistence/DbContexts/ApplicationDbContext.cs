@@ -1,7 +1,7 @@
 ﻿using Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra.Data.Context
+namespace Infra.Data.Persistence.Context
 {
     public class ApplicationDbContext : DbContext
     {
@@ -9,7 +9,7 @@ namespace Infra.Data.Context
         {
         }
 
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
