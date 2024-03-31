@@ -47,7 +47,7 @@ namespace Application.Services
             try
             {
                 var products = await _productRepository.GetProductsAsync(orderBy);
-                return ResultService.OK<ICollection<ProductDTO>>(_mapper.Map<ICollection<ProductDTO>>(products));
+                return ResultService.OK(_mapper.Map<ICollection<ProductDTO>>(products));
             }
             catch (Exception ex)
             {
@@ -93,7 +93,7 @@ namespace Application.Services
             if (product == null)
                 return ResultService.Fail("Produto não encontrado.");
 
-            product = _mapper.Map<ProductDTO, Product>(productDTO, product);
+            product = _mapper.Map<Product>(productDTO);
             await _productRepository.EditAsync(product);
             return ResultService.OK("Produto editado.");
         }

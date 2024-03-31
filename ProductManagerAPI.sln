@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{C92A688D-AC09-4936-A59C-7E5048D52E2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{C92A688D-AC09-4936-A59C-7E5048D52E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D8DBD55A-DCD0-464D-AE65-0743DA95E4C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{D8DBD55A-DCD0-464D-AE65-0743DA95E4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{98D75BEB-A955-4158-85B4-8B64AC2AE452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{98D75BEB-A955-4158-85B4-8B64AC2AE452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Data", "Infra.Data\Infra.Data.csproj", "{71AAB02E-EFB9-4943-BB87-532AC1F6DAF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data", "Infra.Data\Infra.Data.csproj", "{71AAB02E-EFB9-4943-BB87-532AC1F6DAF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.IoC", "Infra.IoC\Infra.IoC.csproj", "{94FCECDA-2D0E-4409-90AA-1967D8127AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.IoC", "Infra.IoC\Infra.IoC.csproj", "{94FCECDA-2D0E-4409-90AA-1967D8127AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EBF4205E-8B14-40FD-B01A-BC7F4591CF99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EBF4205E-8B14-40FD-B01A-BC7F4591CF99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{13E693A3-1912-4AAC-BE2C-06E2BEA6BBF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EBF4205E-8B14-40FD-B01A-BC7F4591CF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBF4205E-8B14-40FD-B01A-BC7F4591CF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBF4205E-8B14-40FD-B01A-BC7F4591CF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E693A3-1912-4AAC-BE2C-06E2BEA6BBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E693A3-1912-4AAC-BE2C-06E2BEA6BBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E693A3-1912-4AAC-BE2C-06E2BEA6BBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E693A3-1912-4AAC-BE2C-06E2BEA6BBF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
