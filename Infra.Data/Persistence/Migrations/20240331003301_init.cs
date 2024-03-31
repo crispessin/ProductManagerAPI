@@ -14,11 +14,11 @@ namespace Infra.Data.Persistence.Migrations
                 name: "produto",
                 columns: table => new
                 {
-                    idproduto = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    estoque = table.Column<int>(type: "int", nullable: false),
-                    nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    preco = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    idproduto = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    estoque = table.Column<int>(type: "INTEGER", nullable: false),
+                    nome = table.Column<string>(type: "TEXT", nullable: false),
+                    preco = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
