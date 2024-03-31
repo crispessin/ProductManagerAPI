@@ -1,5 +1,7 @@
 ﻿using Domain.Entites;
+using Infra.Data.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace Infra.Data.Persistence.Context
 {
@@ -38,6 +40,8 @@ namespace Infra.Data.Persistence.Context
                     }
                 }
             }
+
+            builder.Seed();
         }
 
     }
