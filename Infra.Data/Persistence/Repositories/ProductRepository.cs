@@ -33,19 +33,36 @@ namespace Infra.Data.Persistence.Repositories
             return await _db.Products.FirstOrDefaultAsync(x => x.ProductId == id);
         }
 
-        public async Task<Product?> SearchByNameAsync(string name)
+        public async Task<ICollection<Product>> SearchByNameAsync(string name, string? orderBy)
         {
-            return await _db.Products.FirstOrDefaultAsync(x => x.Name == name);
+            if (orderBy != null)
+            {
+                return await _db.Products.Where(p => p.Name.Contains(name)).OrderBy(GetOrder(orderBy)).ToListAsync();
+            }
+
+            return await _db.Products.Where(p => p.Name.Contains(name)).ToListAsync();
         }
 
-        public async Task<ICollection<Product>> GetProductsAsync()
+        public async Task<ICollection<Product>> GetProductsAsync(string? orderBy)
         {
+            if (orderBy != null)
+            {
+                return await _db.Products.OrderBy(GetOrder(orderBy)).ToListAsync();
+            }
+
             return await _db.Products.ToListAsync();
         }
 
-        public async Task<List<Product>> GetProductsSortedByAsync(string orderBy)
+        private System.Linq.Expressions.Expression<Func<Product, object>> GetOrder(string orderBy)
         {
-            throw new NotImplementedException();
+            switch (orderBy.ToLower())
+            {
+                case "id": return p => p.ProductId;
+                case "stock": return p => p.Stock;
+                case "name": return p => p.Name;                
+                case "price": return p => p.Price;                
+                default: throw new Exception("Parâmetro de ordenação não permitido, opções válidas: [id, stock, name, price]");
+            }
         }
     }
 }

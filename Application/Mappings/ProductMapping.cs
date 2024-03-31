@@ -9,6 +9,7 @@ namespace Application.Mappings
         public ProductMapping()
         {
             CreateMap<ProductDTO, Product>();
+            CreateMap<Product, ProductDTO>();
         }
     }
 }
