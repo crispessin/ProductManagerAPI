@@ -12,13 +12,7 @@ namespace Infra.Data.Persistence.Context
         }
 
         public DbSet<Product> Products { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=produto.db");
-        }
-
-
+    
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

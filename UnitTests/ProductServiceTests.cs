@@ -361,7 +361,7 @@ namespace UnitTests
             var productService = new ProductService(productRepository.Object, mapper.Object);
 
             //Arrange
-            var product = new Product(1,"mouse", 1, 10M);
+            var product = new Product(1, "mouse", 1, 10M);
 
             var productDTO = new ProductDTO()
             {
@@ -372,14 +372,11 @@ namespace UnitTests
             };
 
             productRepository
-                .Setup(repo => repo.GetByIdAsync(1))
-                .ReturnsAsync(product);
-
-            productRepository
-                .Setup(repo => repo.EditAsync(product));
+               .Setup(repo => repo.GetByIdAsync(1))
+               .ReturnsAsync(product);
 
             mapper
-                .Setup(m => m.Map<Product>(productDTO))
+                .Setup(m => m.Map<ProductDTO, Product>(productDTO, product))
                 .Returns(product);
 
             //Act
@@ -387,7 +384,7 @@ namespace UnitTests
 
             //Assert
             productRepository.Verify(p => p.EditAsync(product), Times.AtLeastOnce);
-            mapper.Verify(m => m.Map<Product>(productDTO), Times.AtLeastOnce);
+            mapper.Verify(m => m.Map<ProductDTO, Product>(productDTO, product), Times.AtLeastOnce);
         }
     }
 }
