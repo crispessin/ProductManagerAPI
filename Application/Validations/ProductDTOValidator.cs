@@ -8,12 +8,10 @@ namespace Application.Validations
         public ProductDTOValidator()
         {
             RuleFor(x => x.Stock)
-                .NotEmpty()
-                .NotNull()
+                .NotEmpty()                
                 .WithMessage("Campo estoque deve ser informado.");
 
-            RuleFor(x => x.Name)
-                .NotNull()
+            RuleFor(x => x.Name)                
                 .NotEmpty()
                 .WithMessage("Campo nome deve ser informado.");
 
