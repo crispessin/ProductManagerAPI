@@ -72,7 +72,7 @@ namespace UnitTests
 
             //Arrange
             var expectedMessage = "Problemas na validação";
-            var expectedMessageError = "'Stock' deve ser informado.";
+            var expectedMessageError = "Campo estoque deve ser informado.";
 
             var productDTO = new ProductDTO()
             {
