@@ -1,4 +1,4 @@
-using Domain.Entites;
+ï»¿using Domain.Entites;
 using Domain.Validations;
 
 namespace UnitTests
@@ -44,11 +44,11 @@ namespace UnitTests
             Assert.Equal(expectedMessage, exception.Message);
         }
 
-        [Fact(DisplayName = "Deve retornar erro em produto sem preço informado")]
+        [Fact(DisplayName = "Deve retornar erro em produto sem preÃ§o informado")]
         public void Deve_Retornar_Erro_Em_Produto_Sem_Preco_Informado()
         {
             //Arrange
-            var expectedMessage = "Preço deve ser informado!";
+            var expectedMessage = "PreÃ§o deve ser informado!";
 
             //Act
             var exception = Assert.Throws<DomainValidationException>(() => new Product(1, "mouse", 1, -1M));
