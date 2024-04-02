@@ -8,7 +8,7 @@
         public IntegrationTest()
         {
             _factory = new IntegrationTestWebApplicationFactory();
-            _client = _factory.CreateClient();            
+            _client = _factory.CreateClient();
         }
 
     }

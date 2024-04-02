@@ -93,7 +93,7 @@ namespace Application.Services
             if (product == null)
                 return ResultService.Fail("Produto não encontrado.");
 
-            product = _mapper.Map<Product>(productDTO);
+            product = _mapper.Map<ProductDTO, Product>(productDTO, product);
             await _productRepository.EditAsync(product);
             return ResultService.OK("Produto editado.");
         }
